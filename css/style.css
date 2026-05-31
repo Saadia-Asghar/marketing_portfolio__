@@ -134,9 +134,249 @@ ul {
   margin-inline: auto;
 }
 
-.section {
-  padding-block: var(--section-pad);
+.scene {
   position: relative;
+  padding-block: var(--section-pad);
+}
+
+.scene::before {
+  content: attr(data-term);
+  position: absolute;
+  top: 2rem;
+  right: clamp(1rem, 3vw, 2rem);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  color: rgba(102, 252, 241, 0.15);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* ── Terminal UI layer ── */
+.term-rain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  opacity: 0.07;
+}
+
+.term-rain__col {
+  position: absolute;
+  top: -100%;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--cyber);
+  writing-mode: vertical-rl;
+  animation: termFall linear infinite;
+  letter-spacing: 0.2em;
+}
+
+@keyframes termFall {
+  0% { transform: translateY(-10%); }
+  100% { transform: translateY(110vh); }
+}
+
+.term-status {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  padding: 0.55rem 1.25rem;
+  background: rgba(11, 12, 16, 0.92);
+  border-top: 1px solid rgba(102, 252, 241, 0.12);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.term-status__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.term-status__item--accent {
+  color: var(--cyber-dim);
+}
+
+.term-status__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cyber);
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 6px var(--cyber); }
+  50% { opacity: 0.4; box-shadow: none; }
+}
+
+.term-divider {
+  text-align: center;
+  padding: 1.25rem 1rem;
+  color: rgba(102, 252, 241, 0.2);
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+}
+
+.term-divider span {
+  display: inline-block;
+  animation: dividerGlow 4s ease-in-out infinite;
+}
+
+@keyframes dividerGlow {
+  0%, 100% { color: rgba(102, 252, 241, 0.15); }
+  50% { color: rgba(102, 252, 241, 0.45); }
+}
+
+/* Hero terminal boot */
+.term-boot {
+  margin-bottom: 2rem;
+  border: 1px solid rgba(102, 252, 241, 0.15);
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(11, 12, 16, 0.85);
+  box-shadow: 0 0 40px rgba(102, 252, 241, 0.04);
+  max-width: 520px;
+}
+
+.term-boot__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.85rem;
+  background: var(--obsidian);
+  border-bottom: 1px solid rgba(102, 252, 241, 0.08);
+}
+
+.term-boot__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.term-boot__dot--red { background: #ff5f57; }
+.term-boot__dot--yellow { background: #febc2e; }
+.term-boot__dot--green { background: #28c840; }
+
+.term-boot__title {
+  margin-left: 0.5rem;
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  flex: 1;
+}
+
+.term-boot__live {
+  font-size: 0.58rem;
+  color: var(--cyber);
+  letter-spacing: 0.1em;
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+.term-boot__body {
+  padding: 1rem 1.15rem;
+  font-size: 0.72rem;
+  line-height: 1.7;
+}
+
+.term-boot__line {
+  color: var(--text-muted);
+}
+
+.term-boot__line--2,
+.term-boot__line--3 {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.term-boot__line--2.is-visible,
+.term-boot__line--3.is-visible {
+  opacity: 1;
+}
+
+.term-boot__out {
+  color: var(--cyber-dim);
+  padding-left: 1.25rem;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 0.4s, transform 0.4s;
+}
+
+.term-boot__out.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.term-cursor {
+  color: var(--cyber);
+  animation: blink 0.9s step-end infinite;
+}
+
+.hero__tag-bracket {
+  color: var(--cyber-dim);
+  opacity: 0.6;
+}
+
+.term-chip {
+  display: inline-flex;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid rgba(102, 252, 241, 0.15);
+  border-radius: 4px;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  background: rgba(31, 40, 51, 0.5);
+}
+
+.term-chip--pulse {
+  color: var(--cyber);
+  border-color: rgba(102, 252, 241, 0.35);
+  animation: chipPulse 3s ease-in-out infinite;
+}
+
+@keyframes chipPulse {
+  0%, 100% { box-shadow: 0 0 0 rgba(102, 252, 241, 0); }
+  50% { box-shadow: 0 0 16px rgba(102, 252, 241, 0.15); }
+}
+
+.hero-portrait__bracket {
+  color: var(--cyber-dim);
+  opacity: 0.5;
+}
+
+.nav__prompt {
+  color: var(--cyber);
+  margin-right: 0.25rem;
+  font-size: 0.85em;
+}
+
+.nav__idx {
+  color: var(--cyber-dim);
+  opacity: 0.55;
+  margin-right: 0.25rem;
+  font-size: 0.85em;
+}
+
+.section__index {
+  color: var(--cyber);
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 600;
+  opacity: 0.7;
+  font-family: var(--font-mono);
 }
 
 .scene--alt {
@@ -575,6 +815,19 @@ ul {
   font-size: clamp(1.5rem, 3vw, 2.25rem);
   font-weight: 600;
   opacity: 0.7;
+  font-family: var(--font-mono);
+}
+
+.section__index::before { content: "["; opacity: 0.4; margin-right: 0.1em; }
+.section__index::after { content: "]"; opacity: 0.4; margin-left: 0.1em; }
+
+.section__title::before {
+  content: "// ";
+  color: var(--cyber-dim);
+  font-family: var(--font-mono);
+  font-size: 0.55em;
+  font-weight: 400;
+  letter-spacing: 0.05em;
 }
 
 .section__title {
@@ -1615,7 +1868,7 @@ ul {
 
 /* ── Footer ── */
 .footer {
-  padding: clamp(3rem, 6vw, 5rem) 0;
+  padding: clamp(3rem, 6vw, 5rem) 0 calc(clamp(3rem, 6vw, 5rem) + 2.75rem);
   border-top: 1px solid rgba(102, 252, 241, 0.08);
   background: linear-gradient(180deg, transparent, rgba(31, 40, 51, 0.3));
 }
@@ -1827,6 +2080,18 @@ ul {
 
   .marquee {
     animation: none;
+  }
+
+  .term-rain,
+  .term-rain__col {
+    display: none;
+  }
+
+  .term-boot__out,
+  .term-boot__line--2,
+  .term-boot__line--3 {
+    opacity: 1 !important;
+    transform: none !important;
   }
 
   .ambient__orb,

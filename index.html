@@ -18,15 +18,24 @@
     <span class="ambient__orb ambient__orb--2"></span>
     <span class="ambient__orb ambient__orb--3"></span>
   </div>
+  <div class="term-rain" id="term-rain" aria-hidden="true"></div>
+
+  <div class="term-status mono" aria-hidden="true">
+    <span class="term-status__item"><span class="term-status__dot"></span> SYS: ONLINE</span>
+    <span class="term-status__item">MODE: CINEMATIC</span>
+    <span class="term-status__item" id="term-clock">00:00:00</span>
+    <span class="term-status__item">SCROLL: <span id="scroll-pct">0</span>%</span>
+    <span class="term-status__item term-status__item--accent">saadia@portfolio</span>
+  </div>
 
   <nav class="nav" aria-label="Primary">
-    <a href="#" class="nav__logo">SA<span class="accent">.</span></a>
+    <a href="#" class="nav__logo"><span class="nav__prompt mono">&gt;_</span> SA<span class="accent">.</span></a>
     <ul class="nav__links">
-      <li><a href="#scene-01">Scenes</a></li>
-      <li><a href="#creative-highlight">Creative</a></li>
-      <li><a href="#backstage">Skills</a></li>
-      <li><a href="Saadia-Asghar-Resume.pdf" download="Saadia-Asghar-Resume.pdf">Resume</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#scene-01"><span class="nav__idx">[01]</span> Scenes</a></li>
+      <li><a href="#creative-highlight"><span class="nav__idx">[★]</span> Creative</a></li>
+      <li><a href="#backstage"><span class="nav__idx">[//]</span> Skills</a></li>
+      <li><a href="Saadia-Asghar-Resume.pdf" download="Saadia-Asghar-Resume.pdf"><span class="nav__idx">[↓]</span> Resume</a></li>
+      <li><a href="#contact"><span class="nav__idx">[@]</span> Contact</a></li>
     </ul>
   </nav>
 
@@ -34,7 +43,26 @@
   <header id="hero" class="hero section">
     <div class="hero__grid">
       <div class="hero__content reveal">
-        <p class="hero__tag mono">// ACT I — THE OPENING SCENE</p>
+        <p class="hero__tag mono"><span class="hero__tag-bracket">[</span> ACT I — THE OPENING SCENE <span class="hero__tag-bracket">]</span></p>
+
+        <div class="term-boot reveal mono" aria-label="System boot status">
+          <div class="term-boot__bar">
+            <span class="term-boot__dot term-boot__dot--red"></span>
+            <span class="term-boot__dot term-boot__dot--yellow"></span>
+            <span class="term-boot__dot term-boot__dot--green"></span>
+            <span class="term-boot__title">saadia@portfolio — bash</span>
+            <span class="term-boot__live">● LIVE</span>
+          </div>
+          <div class="term-boot__body">
+            <p class="term-boot__line"><span class="accent">$</span> <span id="type-cmd-1"></span><span class="term-cursor">█</span></p>
+            <p class="term-boot__out term-boot__out--1">→ Saadia Asghar // Digital Storyteller &amp; Strategist</p>
+            <p class="term-boot__line term-boot__line--2"><span class="accent">$</span> <span id="type-cmd-2"></span></p>
+            <p class="term-boot__out term-boot__out--2">→ status: building narratives · GIKI '28 · Islamabad, PK</p>
+            <p class="term-boot__line term-boot__line--3"><span class="accent">$</span> <span id="type-cmd-3"></span></p>
+            <p class="term-boot__out term-boot__out--3">→ scenes loaded: branding · creative · leadership · design</p>
+          </div>
+        </div>
+
         <h1 class="hero__title glitch" data-text="SAADIA ASGHAR DIGITAL STORYTELLER &amp; STRATEGIST.">
           <span class="hero__title-line">SAADIA ASGHAR</span>
           <span class="hero__title-line hero__title-line--sub">DIGITAL STORYTELLER &amp; STRATEGIST.</span>
@@ -65,9 +93,9 @@
           </a>
         </div>
         <div class="hero__meta mono">
-          <span>GIKI · Data Science</span>
-          <span class="hero__meta-divider">|</span>
-          <span>Islamabad, PK</span>
+          <span class="term-chip">{ GIKI · Data Science }</span>
+          <span class="term-chip">{ Islamabad, PK }</span>
+          <span class="term-chip term-chip--pulse">{ ● AVAILABLE }</span>
         </div>
       </div>
 
@@ -84,15 +112,21 @@
               loading="eager"
             />
           </div>
-          <figcaption class="hero-portrait__caption mono">GIKI '28 · DATA SCIENCE</figcaption>
+          <figcaption class="hero-portrait__caption mono">
+            <span class="hero-portrait__bracket">┌─</span> GIKI '28 · DATA SCIENCE <span class="hero-portrait__bracket">─┐</span>
+          </figcaption>
         </figure>
       </div>
     </div>
     <div class="hero__scroll mono">
-      <span>scroll</span>
+      <span>▼ scroll_to_scenes</span>
       <span class="hero__scroll-line"></span>
     </div>
   </header>
+
+  <div class="term-divider mono" aria-hidden="true">
+    <span>═══ SCENE_TRANSITION // loading_act_II ═══</span>
+  </div>
 
   <main>
     <!-- SECTION 2: SCENE 01 — PERSONAL BRANDING -->
@@ -188,6 +222,10 @@
       </div>
     </section>
 
+    <div class="term-divider mono" aria-hidden="true">
+      <span>═══ SCENE_TRANSITION // creative_lab_init ═══</span>
+    </div>
+
     <!-- CREATIVE HIGHLIGHT — GENERATIVE AI -->
     <section id="creative-highlight" class="section scene scene--creative">
       <div class="creative-ambient" aria-hidden="true">
@@ -276,6 +314,10 @@
         </div>
       </div>
     </section>
+
+    <div class="term-divider mono" aria-hidden="true">
+      <span>═══ SCENE_TRANSITION // atomcamp_reels ═══</span>
+    </div>
 
     <!-- SECTION 3: SCENE 02 — ATOMCAMP CAMPUS AMBASSADOR -->
     <section id="scene-02" class="section scene scene--alt">
@@ -368,6 +410,10 @@
         </div>
       </div>
     </section>
+
+    <div class="term-divider mono" aria-hidden="true">
+      <span>═══ SCENE_TRANSITION // marketing_leadership ═══</span>
+    </div>
 
     <!-- SECTION 4: SCENE 03 — MARKETING LEADERSHIP -->
     <section id="scene-03" class="section scene">
@@ -484,6 +530,10 @@
         </div>
       </div>
     </section>
+
+    <div class="term-divider mono" aria-hidden="true">
+      <span>═══ SCENE_TRANSITION // backstage_access ═══</span>
+    </div>
 
     <!-- SECTION 6: BACKSTAGE -->
     <section id="backstage" class="section scene">
