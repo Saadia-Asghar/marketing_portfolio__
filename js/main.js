@@ -61,4 +61,21 @@
       window.scrollTo({ top, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
     });
   });
+
+  /* Live timecode on creative reel video */
+  const reelVideo = document.querySelector('.creative-reel__video');
+  const timecode = document.querySelector('.creative-reel__timecode');
+  if (reelVideo && timecode) {
+    const pad = (n) => String(Math.floor(n)).padStart(2, '0');
+    const updateTimecode = () => {
+      const t = reelVideo.currentTime || 0;
+      const h = pad(t / 3600);
+      const m = pad((t % 3600) / 60);
+      const s = pad(t % 60);
+      const f = pad((t % 1) * 24);
+      timecode.textContent = `${h}:${m}:${s}:${f}`;
+    };
+    reelVideo.addEventListener('timeupdate', updateTimecode);
+    reelVideo.addEventListener('loadedmetadata', updateTimecode);
+  }
 })();

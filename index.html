@@ -13,6 +13,11 @@
 <body>
   <div class="scanlines" aria-hidden="true"></div>
   <div class="grain" aria-hidden="true"></div>
+  <div class="ambient ambient--hero" aria-hidden="true">
+    <span class="ambient__orb ambient__orb--1"></span>
+    <span class="ambient__orb ambient__orb--2"></span>
+    <span class="ambient__orb ambient__orb--3"></span>
+  </div>
 
   <nav class="nav" aria-label="Primary">
     <a href="#" class="nav__logo">SA<span class="accent">.</span></a>
@@ -165,7 +170,19 @@
     </section>
 
     <!-- CREATIVE HIGHLIGHT — GENERATIVE AI -->
-    <section id="creative-highlight" class="section scene scene--alt">
+    <section id="creative-highlight" class="section scene scene--creative">
+      <div class="creative-ambient" aria-hidden="true">
+        <span class="creative-orb creative-orb--1"></span>
+        <span class="creative-orb creative-orb--2"></span>
+      </div>
+
+      <div class="marquee-wrap" aria-hidden="true">
+        <div class="marquee mono">
+          <span>GENERATIVE AI · STORYBOARD · VISUAL NARRATIVE · CONTENT LAB · PROMPT TO PIXEL · FRAME BY FRAME · </span>
+          <span>GENERATIVE AI · STORYBOARD · VISUAL NARRATIVE · CONTENT LAB · PROMPT TO PIXEL · FRAME BY FRAME · </span>
+        </div>
+      </div>
+
       <div class="container">
         <header class="section__header reveal">
           <span class="section__index mono">★</span>
@@ -177,21 +194,67 @@
           Behind the campaigns and the captions lives a quieter experiment — using generative AI to sketch storyboards, shape visuals, and prototype content before it ever hits a feed. This is where I play: turning rough ideas into motion, frame by frame.
         </p>
 
-        <div class="creative-showcase reveal">
-          <div class="creative-showcase__frame">
-            <video
-              class="creative-showcase__video"
-              src="assets/videos/creative-highlight.mp4"
-              controls
-              playsinline
-              preload="metadata"
-              aria-label="Creative highlight — generative AI content and storyboard experiment"
-            ></video>
-            <div class="creative-showcase__scan mono" aria-hidden="true">GEN_AI · STORYBOARD · RENDER</div>
+        <div class="creative-lab reveal">
+          <div class="creative-lab__side">
+            <div class="creative-pipeline">
+              <div class="creative-pipeline__step">
+                <span class="creative-pipeline__num mono">01</span>
+                <div>
+                  <p class="creative-pipeline__title">Prompt &amp; Concept</p>
+                  <p class="creative-pipeline__desc mono">Seed the story — mood, hook, visual direction.</p>
+                </div>
+              </div>
+              <div class="creative-pipeline__line" aria-hidden="true"></div>
+              <div class="creative-pipeline__step">
+                <span class="creative-pipeline__num mono">02</span>
+                <div>
+                  <p class="creative-pipeline__title">Storyboard</p>
+                  <p class="creative-pipeline__desc mono">Generative AI frames the narrative arc.</p>
+                </div>
+              </div>
+              <div class="creative-pipeline__line" aria-hidden="true"></div>
+              <div class="creative-pipeline__step">
+                <span class="creative-pipeline__num mono">03</span>
+                <div>
+                  <p class="creative-pipeline__title">Render &amp; Refine</p>
+                  <p class="creative-pipeline__desc mono">Motion, polish, ready for the feed.</p>
+                </div>
+              </div>
+            </div>
+            <ul class="creative-tags mono">
+              <li>Midjourney</li>
+              <li>Runway</li>
+              <li>CapCut</li>
+              <li>Figma</li>
+            </ul>
           </div>
-          <p class="creative-showcase__note mono">
-            Experimenting with generative AI to build content, storyboards, and visual narratives.
-          </p>
+
+          <div class="creative-reel">
+            <div class="creative-reel__glow" aria-hidden="true"></div>
+            <div class="creative-reel__frame">
+              <span class="creative-reel__corner creative-reel__corner--tl" aria-hidden="true"></span>
+              <span class="creative-reel__corner creative-reel__corner--tr" aria-hidden="true"></span>
+              <span class="creative-reel__corner creative-reel__corner--bl" aria-hidden="true"></span>
+              <span class="creative-reel__corner creative-reel__corner--br" aria-hidden="true"></span>
+              <span class="creative-reel__ratio mono">9:16</span>
+              <span class="creative-reel__timecode mono" aria-hidden="true">00:00:00:00</span>
+              <div class="creative-reel__viewport">
+                <video
+                  class="creative-reel__video"
+                  src="assets/videos/creative-highlight.mp4"
+                  controls
+                  playsinline
+                  preload="metadata"
+                  aria-label="Creative highlight — generative AI content and storyboard experiment"
+                ></video>
+              </div>
+              <div class="creative-reel__scanline" aria-hidden="true"></div>
+              <div class="creative-reel__badge mono">GEN_AI · REEL</div>
+            </div>
+            <p class="creative-reel__note mono">
+              Vertical 9:16 · experimenting with generative AI for content &amp; storyboards
+            </p>
+          </div>
         </div>
       </div>
     </section>
