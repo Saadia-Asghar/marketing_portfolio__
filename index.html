@@ -7,11 +7,12 @@
   <title>Saadia Asghar | Digital Storyteller & Strategist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <div class="scanlines" aria-hidden="true"></div>
+  <canvas id="fairy-dust" class="fairy-dust" aria-hidden="true"></canvas>
+  <div class="scanlines scanlines--soft" aria-hidden="true"></div>
   <div class="grain" aria-hidden="true"></div>
   <div class="ambient ambient--hero" aria-hidden="true">
     <span class="ambient__orb ambient__orb--1"></span>
@@ -21,15 +22,15 @@
   <div class="term-rain" id="term-rain" aria-hidden="true"></div>
 
   <div class="term-status mono" aria-hidden="true">
-    <span class="term-status__item"><span class="term-status__dot"></span> SYS: ONLINE</span>
-    <span class="term-status__item">MODE: CINEMATIC</span>
+    <span class="term-status__item"><span class="term-status__dot"></span> STORY: LIVE</span>
+    <span class="term-status__item">MODE: GLITCH · CREATIVE</span>
     <span class="term-status__item" id="term-clock">00:00:00</span>
     <span class="term-status__item">SCROLL: <span id="scroll-pct">0</span>%</span>
-    <span class="term-status__item term-status__item--accent">saadia@portfolio</span>
+    <span class="term-status__item term-status__item--accent">✦ saadia.asghar</span>
   </div>
 
   <nav class="nav" aria-label="Primary">
-    <a href="#" class="nav__logo"><span class="nav__prompt mono">&gt;_</span> SA<span class="accent">.</span></a>
+    <a href="#" class="nav__logo"><span class="nav__prompt">✦</span> SA<span class="accent">.</span></a>
     <ul class="nav__links">
       <li><a href="#scene-01"><span class="nav__idx">[01]</span> Scenes</a></li>
       <li><a href="#creative-highlight"><span class="nav__idx">[★]</span> Creative</a></li>
@@ -118,14 +119,21 @@
         </figure>
       </div>
     </div>
-    <div class="hero__scroll mono">
-      <span>▼ scroll_to_scenes</span>
-      <span class="hero__scroll-line"></span>
-    </div>
+    <a href="#scene-01" class="hero__scroll mono" aria-label="Scroll to scenes">
+      <span class="hero__scroll-label">descend to scenes</span>
+      <span class="hero__scroll-arrow">
+        <svg class="hero__scroll-svg" viewBox="0 0 24 48" fill="none" aria-hidden="true">
+          <path class="hero__scroll-path" d="M12 4v32M6 28l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="hero__scroll-spark hero__scroll-spark--1">✦</span>
+        <span class="hero__scroll-spark hero__scroll-spark--2">·</span>
+        <span class="hero__scroll-spark hero__scroll-spark--3">✧</span>
+      </span>
+    </a>
   </header>
 
   <div class="term-divider mono" aria-hidden="true">
-    <span>═══ SCENE_TRANSITION // loading_act_II ═══</span>
+    <span>✦ ─── scene transition · act II ─── ✦</span>
   </div>
 
   <main>
@@ -223,7 +231,7 @@
     </section>
 
     <div class="term-divider mono" aria-hidden="true">
-      <span>═══ SCENE_TRANSITION // creative_lab_init ═══</span>
+      <span>✦ ─── creative lab · generative story ─── ✦</span>
     </div>
 
     <!-- CREATIVE HIGHLIGHT — GENERATIVE AI -->
@@ -316,7 +324,7 @@
     </section>
 
     <div class="term-divider mono" aria-hidden="true">
-      <span>═══ SCENE_TRANSITION // atomcamp_reels ═══</span>
+      <span>✦ ─── atomcamp · reel sequence ─── ✦</span>
     </div>
 
     <!-- SECTION 3: SCENE 02 — ATOMCAMP CAMPUS AMBASSADOR -->
@@ -412,7 +420,7 @@
     </section>
 
     <div class="term-divider mono" aria-hidden="true">
-      <span>═══ SCENE_TRANSITION // marketing_leadership ═══</span>
+      <span>✦ ─── marketing · leadership arc ─── ✦</span>
     </div>
 
     <!-- SECTION 4: SCENE 03 — MARKETING LEADERSHIP -->
@@ -532,7 +540,7 @@
     </section>
 
     <div class="term-divider mono" aria-hidden="true">
-      <span>═══ SCENE_TRANSITION // backstage_access ═══</span>
+      <span>✦ ─── backstage · skills manifest ─── ✦</span>
     </div>
 
     <!-- SECTION 6: BACKSTAGE -->

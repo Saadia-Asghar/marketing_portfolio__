@@ -41,8 +41,8 @@
       () => {
         nav.style.background =
           window.scrollY > 80
-            ? 'rgba(11, 12, 16, 0.95)'
-            : 'linear-gradient(180deg, rgba(11, 12, 16, 0.92) 0%, transparent 100%)';
+            ? 'rgba(12, 10, 15, 0.94)'
+            : 'linear-gradient(180deg, rgba(12, 10, 15, 0.9) 0%, transparent 100%)';
       },
       { passive: true }
     );
@@ -87,7 +87,7 @@
 
   /* Terminal character rain */
   const termRain = document.getElementById('term-rain');
-  const glyphs = '01{}[]<>|/\\@#$*&~═→█░▓▒01010101';
+  const glyphs = '✦✧·◦∗°❋0101';
   if (termRain && !prefersReducedMotion) {
     const cols = Math.min(18, Math.floor(window.innerWidth / 80));
     for (let i = 0; i < cols; i++) {
@@ -185,5 +185,75 @@
       },
       { passive: true }
     );
+  }
+
+  /* Fairy dust particles */
+  const canvas = document.getElementById('fairy-dust');
+  if (canvas && !prefersReducedMotion) {
+    const ctx = canvas.getContext('2d');
+    let w = 0;
+    let h = 0;
+    const particles = [];
+    const count = Math.min(90, Math.floor(window.innerWidth / 14));
+
+    const palette = ['#c4b5fd', '#e8b4bc', '#d4b896', '#f0e6d3', '#a78bfa'];
+
+    function resize() {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    }
+
+    function spawn() {
+      particles.length = 0;
+      for (let i = 0; i < count; i++) {
+        particles.push({
+          x: Math.random() * w,
+          y: Math.random() * h,
+          r: Math.random() * 2.2 + 0.4,
+          vx: (Math.random() - 0.5) * 0.35,
+          vy: Math.random() * 0.25 + 0.08,
+          alpha: Math.random() * 0.55 + 0.15,
+          color: palette[Math.floor(Math.random() * palette.length)],
+          twinkle: Math.random() * Math.PI * 2,
+        });
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      particles.forEach((p) => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.twinkle += 0.04;
+        if (p.y > h + 4) {
+          p.y = -4;
+          p.x = Math.random() * w;
+        }
+        if (p.x < -4) p.x = w + 4;
+        if (p.x > w + 4) p.x = -4;
+        const a = p.alpha * (0.55 + 0.45 * Math.sin(p.twinkle));
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = a;
+        ctx.fill();
+        if (p.r > 1.2) {
+          ctx.globalAlpha = a * 0.35;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r * 3, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      });
+      ctx.globalAlpha = 1;
+      requestAnimationFrame(draw);
+    }
+
+    resize();
+    spawn();
+    draw();
+    window.addEventListener('resize', () => {
+      resize();
+      spawn();
+    });
   }
 })();
