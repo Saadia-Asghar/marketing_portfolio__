@@ -62,8 +62,42 @@
     });
   });
 
+  /* Load all portfolio videos reliably */
+  const portfolioVideos = document.querySelectorAll('.portfolio-video');
+
+  portfolioVideos.forEach((video) => {
+    const source = video.querySelector('source');
+    const src = source?.getAttribute('src') || video.getAttribute('src');
+    if (!src) return;
+
+    const loadVideo = () => {
+      if (source && !source.src) {
+        source.src = src;
+      }
+      video.load();
+    };
+
+    if (prefersReducedMotion) {
+      loadVideo();
+      return;
+    }
+
+    const videoObserver = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          loadVideo();
+          videoObserver.unobserve(video);
+        }
+      },
+      { rootMargin: '120px' }
+    );
+
+    videoObserver.observe(video);
+    loadVideo();
+  });
+
   /* Live timecode on creative reel video */
-  const reelVideos = document.querySelectorAll('.creative-reel__video, .highlight-reel__video');
+  const reelVideos = document.querySelectorAll('.portfolio-video');
   const timecode = document.querySelector('.creative-reel__timecode');
   const featuredVideo = document.querySelector('.creative-reel__video');
 

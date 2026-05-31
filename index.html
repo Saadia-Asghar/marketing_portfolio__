@@ -200,13 +200,16 @@
               <div class="highlight-reel__frame">
                 <span class="highlight-reel__ratio mono">9:16</span>
                 <video
-                  class="highlight-reel__video"
-                  src="assets/videos/creative-highlight.mp4"
-                  controls
+                  class="highlight-reel__video portfolio-video"
                   playsinline
-                  preload="metadata"
-                  aria-label="Creative highlight — generative AI storyboard experiment"
-                ></video>
+                  controls
+                  preload="auto"
+                  width="1080"
+                  height="1920"
+                  aria-label="Creative highlight reel"
+                >
+                  <source src="./assets/videos/creative-highlight.mp4" type="video/mp4" />
+                </video>
               </div>
             </article>
             <article class="highlight-card">
@@ -272,13 +275,16 @@
                 <span class="creative-reel__timecode mono" aria-hidden="true">00:00:00:00</span>
                 <div class="creative-reel__viewport">
                   <video
-                    class="creative-reel__video"
-                    src="assets/videos/creative-highlight.mp4"
-                    controls
+                    class="creative-reel__video portfolio-video"
                     playsinline
-                    preload="metadata"
-                    aria-label="Creative highlight — generative AI content and storyboard experiment"
-                  ></video>
+                    controls
+                    preload="auto"
+                    width="1080"
+                    height="1920"
+                    aria-label="Creative highlight reel"
+                  >
+                    <source src="./assets/videos/creative-highlight.mp4" type="video/mp4" />
+                  </video>
                 </div>
                 <div class="creative-reel__scanline" aria-hidden="true"></div>
                 <div class="creative-reel__badge mono">GEN_AI · REEL</div>
@@ -312,12 +318,9 @@
                 </div>
               </div>
             </div>
-            <ul class="creative-tags mono">
-              <li>Midjourney</li>
-              <li>Runway</li>
-              <li>CapCut</li>
-              <li>Figma</li>
-            </ul>
+            <div class="creative-sparkline mono" aria-hidden="true">
+              <span>✦</span><span>·</span><span>✧</span><span>·</span><span>✦</span>
+            </div>
           </div>
         </div>
       </div>
@@ -341,80 +344,44 @@
         </p>
 
         <div class="video-grid">
-          <a href="https://www.instagram.com/reel/DXyJ-QIsOAT/" target="_blank" rel="noopener noreferrer" class="video-card reveal" aria-label="Watch atomcamp reel on Instagram">
-            <div class="video-card__frame">
-              <div class="video-card__thumb video-card__thumb--1"></div>
-              <div class="video-card__play" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-              </div>
-              <div class="video-card__overlay">
-                <div class="video-card__metrics">
-                  <div class="metric">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                    <span class="mono">12.4K reach</span>
-                  </div>
-                  <div class="metric">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                    <span class="mono">8.2% eng.</span>
-                  </div>
-                  <div class="metric">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                    <span class="mono">↑ trending</span>
-                  </div>
-                </div>
-              </div>
+          <article class="video-card reveal">
+            <div class="video-card__frame video-card__frame--embed">
+              <iframe
+                class="video-card__embed"
+                src="https://www.instagram.com/reel/DXyJ-QIsOAT/embed"
+                title="atomcamp reel 1"
+                loading="lazy"
+                allowfullscreen
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              ></iframe>
             </div>
-          </a>
+          </article>
 
-          <a href="https://www.instagram.com/reel/DVn0uZPjL4J/" target="_blank" rel="noopener noreferrer" class="video-card reveal reveal--delay" aria-label="Watch atomcamp reel on Instagram">
-            <div class="video-card__frame">
-              <div class="video-card__thumb video-card__thumb--2"></div>
-              <div class="video-card__play" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-              </div>
-              <div class="video-card__overlay">
-                <div class="video-card__metrics">
-                  <div class="metric">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                    <span class="mono">9.8K reach</span>
-                  </div>
-                  <div class="metric">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                    <span class="mono">6.5% eng.</span>
-                  </div>
-                  <div class="metric">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                    <span class="mono">↑ trending</span>
-                  </div>
-                </div>
-              </div>
+          <article class="video-card reveal reveal--delay">
+            <div class="video-card__frame video-card__frame--embed">
+              <iframe
+                class="video-card__embed"
+                src="https://www.instagram.com/reel/DVn0uZPjL4J/embed"
+                title="atomcamp reel 2"
+                loading="lazy"
+                allowfullscreen
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              ></iframe>
             </div>
-          </a>
+          </article>
 
-          <a href="https://www.instagram.com/reel/DXHudedEkCD/" target="_blank" rel="noopener noreferrer" class="video-card reveal reveal--delay-2" aria-label="Watch atomcamp reel on Instagram">
-            <div class="video-card__frame">
-              <div class="video-card__thumb video-card__thumb--3"></div>
-              <div class="video-card__play" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-              </div>
-              <div class="video-card__overlay">
-                <div class="video-card__metrics">
-                  <div class="metric">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                    <span class="mono">11.1K reach</span>
-                  </div>
-                  <div class="metric">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-                    <span class="mono">7.9% eng.</span>
-                  </div>
-                  <div class="metric">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-                    <span class="mono">↑ trending</span>
-                  </div>
-                </div>
-              </div>
+          <article class="video-card reveal reveal--delay-2">
+            <div class="video-card__frame video-card__frame--embed">
+              <iframe
+                class="video-card__embed"
+                src="https://www.instagram.com/reel/DXHudedEkCD/embed"
+                title="atomcamp reel 3"
+                loading="lazy"
+                allowfullscreen
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              ></iframe>
             </div>
-          </a>
+          </article>
         </div>
       </div>
     </section>
