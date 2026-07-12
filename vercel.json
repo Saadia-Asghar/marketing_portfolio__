@@ -2,6 +2,8 @@
   "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
+  "buildCommand": "",
+  "outputDirectory": "./",
   "headers": [
     {
       "source": "/assets/videos/(.*)",
