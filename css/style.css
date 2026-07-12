@@ -2200,6 +2200,107 @@ ul {
   color: var(--text);
 }
 
+/* ── Chronological Timeline ── */
+.timeline-section {
+  position: relative;
+}
+
+.timeline-container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.timeline-container::before {
+  content: '';
+  position: absolute;
+  left: 31px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--cyber) 0%, var(--cyber-dim) 50%, rgba(196, 181, 253, 0.05) 100%);
+  z-index: 0;
+}
+
+.timeline-event {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-left: 70px;
+  z-index: 1;
+}
+
+.timeline-event__icon {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--obsidian);
+  border: 2px solid var(--cyber);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(196, 181, 253, 0.4);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.timeline-event:hover .timeline-event__icon {
+  transform: scale(1.2);
+  border-color: var(--rose);
+  box-shadow: 0 0 15px rgba(232, 180, 188, 0.6);
+}
+
+.timeline-event__content {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-event:hover .timeline-event__content {
+  border-color: rgba(196, 181, 253, 0.2);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-event__date {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--cyber-dim);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.4rem;
+}
+
+.timeline-event__org {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 0.3rem;
+  color: var(--text);
+}
+
+.timeline-event__role {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+  display: inline-block;
+  background: rgba(212, 184, 150, 0.08);
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  border: 1px solid rgba(212, 184, 150, 0.15);
+}
+
+.timeline-event__desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
